@@ -63,13 +63,14 @@ public class GameUtils {
             gameType = new RockGameTypeImpl();
         }else if  (playerSelectedChoice==R.id.btnPaper){
             gameType = new PaperGameTypeImpl();
+            //TODO: Add an else if that creates an impl for spock
+            //TODO: Add an else if that creates an impl for lizard
         }else if  (playerSelectedChoice==R.id.btnSpock){
             gameType = new SpockGameTypeImpl();
         }else if  (playerSelectedChoice==R.id.btnLizard) {
             gameType = new LizardGameTypeImpl();
         }
-        //TODO: Add an else if that creates an impl for spock
-        //TODO: Add an else if that creates an impl for lizard
+
         else{
             gameType = new ScissorsGameTypeImpl();
         }
