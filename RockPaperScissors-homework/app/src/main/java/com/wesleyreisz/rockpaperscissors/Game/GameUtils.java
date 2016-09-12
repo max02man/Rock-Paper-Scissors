@@ -37,7 +37,7 @@ public class GameUtils {
         Random r = new Random(System.currentTimeMillis());
 
         //TODO: change this value to be the total number of options
-        selectedValue = r.nextInt(3);//this will upto but not including this number 0-2 (for 3 #'s)
+        selectedValue = r.nextInt(5);//this will upto but not including this number 0-2 (for 3 #'s)
         if(selectedValue==0){
             return R.id.btnRock;
         }else if (selectedValue==1){
@@ -45,9 +45,12 @@ public class GameUtils {
         }else if (selectedValue==2){
             return R.id.btnScissors;
         //TODO: Add an else if that return the lizard option
-        }else{
+        }else if (selectedValue==3){
+            return R.id.btnLizard;
+        }
+        else{
             //TODO: Add an else that returns spock (must fix null)
-            return null;
+            return R.id.btnSpock;
         }
 
 
@@ -60,9 +63,14 @@ public class GameUtils {
             gameType = new RockGameTypeImpl();
         }else if  (playerSelectedChoice==R.id.btnPaper){
             gameType = new PaperGameTypeImpl();
+            //TODO: Add an else if that creates an impl for spock
+            //TODO: Add an else if that creates an impl for lizard
+        }else if  (playerSelectedChoice==R.id.btnSpock){
+            gameType = new SpockGameTypeImpl();
+        }else if  (playerSelectedChoice==R.id.btnLizard) {
+            gameType = new LizardGameTypeImpl();
         }
-        //TODO: Add an else if that creates an impl for spock
-        //TODO: Add an else if that creates an impl for lizard
+
         else{
             gameType = new ScissorsGameTypeImpl();
         }
